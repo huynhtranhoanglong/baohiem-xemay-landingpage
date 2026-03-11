@@ -53,6 +53,7 @@ document.addEventListener('DOMContentLoaded', () => {
                 engineNumber: formData.get('engineNumber'),
                 fullName: formData.get('fullName'),
                 identityNumber: formData.get('identityNumber'),
+                address: formData.get('address'),
                 phoneNumber: formData.get('phoneNumber'),
                 email: formData.get('email'),
                 product: formData.get('product')
@@ -65,6 +66,7 @@ document.addEventListener('DOMContentLoaded', () => {
             const formattedData = `[ĐƠN HÀNG MỚI]
 Họ tên: ${customerData.fullName}
 CCCD: ${customerData.identityNumber}
+Địa chỉ: ${customerData.address}
 SĐT: ${customerData.phoneNumber}
 Email: ${customerData.email}
 

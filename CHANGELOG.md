@@ -2,6 +2,11 @@
 
 All user-facing notable changes to this project will be documented in this file.
 
+## [v1.2.1] - Bổ sung thông tin Địa chỉ
+### Added
+- **Biểu mẫu**: Thêm trường thông tin "Địa chỉ hiện tại" (bắt buộc nhập) vào phần thông tin người mua, nhằm đáp ứng yêu cầu cấp phát ấn chỉ chính xác tới nơi của khách hàng.
+- Địa chỉ được lưu lại và không cần phải nhập lại trong trường hợp khách hàng sử dụng tính năng "Tiếp tục mua cho xe khác".
+
 ## [v1.2.0] - Tính năng mua nhiều xe liên tiếp & Cập nhật biểu mẫu
 ### Added / Changed
 - Thêm nút "Tiếp tục mua cho xe khác" sau khi hoàn tất đăng ký.
