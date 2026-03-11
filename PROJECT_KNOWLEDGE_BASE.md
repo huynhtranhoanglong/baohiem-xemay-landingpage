@@ -31,6 +31,15 @@ Project BBH 01 aims to sell compulsory and voluntary motorcycle insurance in Vie
 - **Active Knowledge Capture**: ONLY AFTER all necessary context is gathered and clear, the agent MUST proactively update this `PROJECT_KNOWLEDGE_BASE.md` whenever the user makes a decision, changes a requirement, or adds a constraint during conversations. 
 - **Plan-First Execution**: The agent is STRICTLY PROHIBITED from executing changes or writing code immediately. For every request, the agent MUST first create an `implementation_plan.md` artifact and request user approval before proceeding to the execution phase.
 
+## 5. Copywriting & Legal Terminology
+To build trust and ensure compliance, all AIs and agents generating content must adhere to precise legal terminology related to Vietnamese compulsory motorcycle insurance. Before writing copy, agents MUST read the reference file: `"Tổng hợp quy định của Nhà nước về bảo hiểm trách nhiệm dân sự bắt buộc đối với xe mô tô, xe gắn máy.md"`.
+
+**Key Guidelines:**
+- **Product Name**: Always use "Bảo hiểm bắt buộc trách nhiệm dân sự của chủ xe cơ giới" instead of informal terms like "bảo hiểm xe máy bắt buộc" in binding/official contexts.
+- **Legal Subjects**: Use "Chủ xe cơ giới" (vehicle owner), "Bên thứ ba" (third party/victim), "Doanh nghiệp bảo hiểm" (Insurance company).
+- **Core Concepts**: Use "Mức trách nhiệm bảo hiểm" (maximum compensation), "Giấy chứng nhận bảo hiểm" (insurance certificate), "Phí bảo hiểm" (premium), "Tạm ứng bồi thường" (advance compensation).
+- **Tone & Voice**: Transparent, accurate, and reassuring. Always cite exact legal figures when relevant (e.g., maximum compensation of 150 million VND/person/accident for health/life, 50 million VND/accident for property, or fines ranging from 200,000 to 300,000 VND from 2025). The copy should balance the strict legal obligation (avoiding fines) with the financial protection benefits.
+
 ---
 **Changelog / History:**
 - Created initial knowledge base structure.
@@ -38,3 +47,4 @@ Project BBH 01 aims to sell compulsory and voluntary motorcycle insurance in Vie
 - Added explicit Anti-Hallucination rule requiring prompt clarification of ambiguous/missing details before any KB updates.
 - Updated Sections 1, 2, and 3 with the core business model, Global Care/DBV partnership details, the Facebook Ads -> LP -> Manual fulfillment funnel, and scoped Phase 1 to building the Landing Page.
 - Updated Section 3: Confirmed data collection will use Google Sheets and hosting will use Vercel/Netlify.
+- Added Section 5: Copywriting & Legal Terminology to enforce the use of standard Vietnamese legal terms for compulsory insurance based on updated legal documents.
