@@ -1,0 +1,17 @@
+# 1. OS Generated Files
+.DS_Store
+Thumbs.db
+
+# 2. AI Assistant & Agent Context
+.agent/
+.gemini/
+
+# 3. Project Knowledge Base & Reference Documentation
+PROJECT_KNOWLEDGE_BASE.md
+Tổng hợp quy định của Nhà nước về bảo hiểm trách nhiệm dân sự bắt buộc đối với xe mô tô, xe gắn máy.md
+Vietnam Compulsory Motorcycle Insurance  Legal Framework and Key Rules.md
+
+# 4. Logs and Temp Files
+*.log
+tmp/
+temp/
