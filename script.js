@@ -3,6 +3,22 @@ document.addEventListener('DOMContentLoaded', () => {
     const submitBtn = document.getElementById('submitBtn');
     const successMessage = document.getElementById('successMessage');
     const dataOutput = document.getElementById('dataOutput');
+    const buyAnotherBtn = document.getElementById('buyAnotherBtn');
+    const summaryProduct = document.getElementById('summary-product');
+    const summaryPrice = document.getElementById('summary-price');
+    const productRadios = document.querySelectorAll('input[name="product"]');
+
+    productRadios.forEach(radio => {
+        radio.addEventListener('change', (e) => {
+            if (e.target.value.includes('86.000')) {
+                summaryProduct.textContent = 'Bảo hiểm TNDS Bắt buộc + Tự nguyện (1 Năm)';
+                summaryPrice.textContent = '86.000 đ';
+            } else {
+                summaryProduct.textContent = 'Bảo hiểm TNDS Bắt buộc (1 Năm)';
+                summaryPrice.textContent = '66.000 đ';
+            }
+        });
+    });
 
     // Smooth scrolling for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
@@ -33,13 +49,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const formData = new FormData(form);
             const customerData = {
                 plateNumber: formData.get('plateNumber'),
-                chassisNumber: formData.get('chassisNumber') || 'Không nhập',
-                engineNumber: formData.get('engineNumber') || 'Không nhập',
+                chassisNumber: formData.get('chassisNumber'),
+                engineNumber: formData.get('engineNumber'),
                 fullName: formData.get('fullName'),
                 identityNumber: formData.get('identityNumber'),
                 phoneNumber: formData.get('phoneNumber'),
                 email: formData.get('email'),
-                product: "TNDS Bắt buộc + Tự nguyện (86.000đ)"
+                product: formData.get('product')
             };
 
             // In a real app, you would send this to your backend via fetch()
@@ -95,4 +111,36 @@ Gói: ${customerData.product}`;
             form.reportValidity();
         }
     });
+
+    // Handle "Buy Another Vehicle" button click
+    if (buyAnotherBtn) {
+        buyAnotherBtn.addEventListener('click', () => {
+            // 1. Reset specific vehicle fields
+            document.getElementById('plateNumber').value = '';
+            document.getElementById('chassisNumber').value = '';
+            document.getElementById('engineNumber').value = '';
+
+            // 2. Hide success message
+            successMessage.classList.add('hidden');
+
+            // 3. Show the form fields again
+            Array.from(form.children).forEach(child => {
+                if(child.id !== 'successMessage') {
+                    child.style.display = '';
+                }
+            });
+
+            // 4. Reset submit button state
+            submitBtn.disabled = false;
+            submitBtn.innerText = 'Xác nhận thông tin & Yêu cầu mã QR';
+
+            // 5. Scroll back smoothly to the specific vehicle information area
+            const vehicleInfoTitle = Array.from(document.querySelectorAll('.form-group-title')).find(el => el.textContent.includes('Thông Tin Xe'));
+            if (vehicleInfoTitle) {
+                vehicleInfoTitle.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                form.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    }
 });

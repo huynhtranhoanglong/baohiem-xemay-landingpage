@@ -31,8 +31,8 @@
                 <h1>Tránh Phạt <span class="highlight-red">300.000đ</span><br> Mua Bảo Hiểm Xe Máy Điện Tử 100% Online</h1>
                 <p class="hero-subtitle">Chứng nhận điện tử PDF có giá trị pháp lý tương đương bản giấy. Cấp ấn chỉ trực tiếp từ các đối tác bảo hiểm uy tín. Hoàn tất trong 3 phút, nhận ngay qua Email/Zalo.</p>
                 <div class="hero-price">
-                    <span class="price">86.000đ</span>
-                    <span class="price-note">Giá niêm yết của Bộ Tài Chính<br>(TNDS Bắt Buộc + Tự Nguyện)</span>
+                    <span class="price">Từ 66.000đ</span>
+                    <span class="price-note">Giá niêm yết của Bộ Tài Chính<br>(TNDS Bắt Buộc)</span>
                 </div>
                 <div class="hero-actions">
                     <a href="#order-form" class="cta-button primary large">Điền thông tin ngay</a>
@@ -81,6 +81,26 @@
                 
                 <form id="insurance-form" class="insurance-form">
                     
+                    <div class="form-group-title">Chọn Gói Bảo Hiểm</div>
+                    <div class="package-selection">
+                        <label class="package-card">
+                            <input type="radio" name="product" value="TNDS Bắt buộc + Tự nguyện (86.000đ)" checked>
+                            <span class="package-details">
+                                <span class="package-name">Bắt buộc + Tự Nguyện</span>
+                                <span class="package-price">86.000đ / năm</span>
+                                <span class="package-desc">Bảo vệ tối đa cho bản thân và người thứ ba. Được khuyến nghị.</span>
+                            </span>
+                        </label>
+                        <label class="package-card">
+                            <input type="radio" name="product" value="Chỉ TNDS Bắt buộc (66.000đ)">
+                            <span class="package-details">
+                                <span class="package-name">Chỉ TNDS Bắt buộc</span>
+                                <span class="package-price">66.000đ / năm</span>
+                                <span class="package-desc">Đủ điều kiện xuất trình cho CSGT khi kiểm tra.</span>
+                            </span>
+                        </label>
+                    </div>
+
                     <div class="form-group-title">Thông Tin Xe</div>
                     <div class="form-row">
                         <div class="form-group">
@@ -90,12 +110,12 @@
                     </div>
                     <div class="form-row">
                         <div class="form-group">
-                            <label for="chassisNumber">Số khung (Chỉ cần điền 1 trong 2)</label>
-                            <input type="text" id="chassisNumber" name="chassisNumber" placeholder="Nhập số khung">
+                            <label for="chassisNumber">Số khung *</label>
+                            <input type="text" id="chassisNumber" name="chassisNumber" placeholder="Nhập số khung" required>
                         </div>
                         <div class="form-group">
-                            <label for="engineNumber">Số máy (Chỉ cần điền 1 trong 2)</label>
-                            <input type="text" id="engineNumber" name="engineNumber" placeholder="Nhập số máy">
+                            <label for="engineNumber">Số máy *</label>
+                            <input type="text" id="engineNumber" name="engineNumber" placeholder="Nhập số máy" required>
                         </div>
                     </div>
 
@@ -131,11 +151,11 @@
                     <div class="form-summary">
                         <div class="summary-row">
                             <span>Sản phẩm:</span>
-                            <span>Bảo hiểm TNDS Bắt buộc + Tự nguyện (1 Năm)</span>
+                            <span id="summary-product">Bảo hiểm TNDS Bắt buộc + Tự nguyện (1 Năm)</span>
                         </div>
                         <div class="summary-row total">
                             <span>Tổng thanh toán:</span>
-                            <span class="total-price">86.000 đ</span>
+                            <span class="total-price" id="summary-price">86.000 đ</span>
                         </div>
                     </div>
 
@@ -146,6 +166,7 @@
                         ✅ <strong>Đã ghi nhận thông tin!</strong><br>
                         Hệ thống đang chuẩn bị hồ sơ. Vui lòng làm theo hướng dẫn trong Email để nhận mã QR thanh toán nhé.
                         <div id="dataOutput" class="data-output"></div>
+                        <button type="button" class="cta-button outline" id="buyAnotherBtn" style="margin-top: 1.5rem; width: 100%;">Tiếp tục mua cho xe khác</button>
                     </div>
 
                 </form>

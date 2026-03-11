@@ -215,6 +215,78 @@ p { font-size: 1rem; color: var(--text-muted); margin-bottom: 15px; }
     font-size: 0.95rem;
 }
 
+/* Package Selection */
+.package-selection {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 25px;
+}
+
+.package-card {
+    display: flex;
+    align-items: flex-start;
+    padding: 15px;
+    border: 2px solid #ced4da;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: var(--transition);
+    background: #fcfcfc;
+}
+
+.package-card input[type="radio"] {
+    margin-top: 4px;
+    margin-right: 15px;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary-color);
+}
+
+.package-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.package-name {
+    font-weight: 700;
+    font-size: 1.05rem;
+    color: var(--text-main);
+    margin-bottom: 4px;
+}
+
+.package-price {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: var(--accent-color);
+    margin-bottom: 4px;
+}
+
+.package-desc {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
+
+.package-card:hover {
+    border-color: var(--primary-color);
+    background: #f0f7ff;
+}
+
+/* Selected state styling based on radio checked */
+.package-card:has(input[type="radio"]:checked) {
+    border-color: var(--primary-color);
+    background: #f0f7ff;
+    box-shadow: 0 4px 15px rgba(0, 86, 179, 0.1);
+}
+
+@media (min-width: 480px) {
+    .package-selection {
+        flex-direction: row;
+    }
+    .package-card {
+        flex: 1;
+    }
+}
+
 /* Form Section */
 .form-section {
     padding: 40px 0;
